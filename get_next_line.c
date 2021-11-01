@@ -3,37 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paijavai <paijavai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 23:38:25 by paijavai          #+#    #+#             */
-/*   Updated: 2021/11/01 00:18:04 by paijavai         ###   ########.fr       */
+/*   Created: 2021/10/31 23:38:25 by bmiguel-          #+#    #+#             */
+/*   Updated: 2021/11/01 18:31:30 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int nb_lines (char *str)
+static char new_line (char *str)
 {
     int i;
-    int j;
 
     i = 0;
-    j = 0;
     while (str[i])
     {
         if (str[i] == '\n')
         {
-            j++;
+            return (1);
         }
         i++;
     }
-    return (j);
+    return (0);
 }
 
-static char *line_ct (char *str)
+static char *line (char *str)
 {
     int i;
-    //int j;
     int len;
     char *line;
 
@@ -48,13 +45,31 @@ static char *line_ct (char *str)
         line[i] = str[i];
         i++;
     }
+    if (str[i] == '\n')
+        line[i] = str[i];
+    i++;
+    line[i] = '\0';
     return (line);
 }
+
+// char    *get_next_line(int fd)
+// {
+//     int i;
+//     //int j;
+//     char buf[BUFFER_SIZE + 1];
+
+//     if (fd == -1)
+//         return (NULL);
+//     i = read(fd, buf, BUFFER_SIZE);
+//     buf = line()
+//     buf[i] = '\0';
+    
+// }
 
 int main ()
 {
     char str [] = "ola tudo bem \n1 quebra \n2 quebra";
     
-    printf("%d\n", nb_lines(str));
-    printf("%s", line_ct(str));
+    printf("%d\n", new_line(str));
+    printf("%s", line(str));
     }
