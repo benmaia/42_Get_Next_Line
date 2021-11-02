@@ -15,19 +15,17 @@
 static int nb_lines (char *str)
 {
     int i;
-    int j;
 
     i = 0;
-    j = 0;
     while (str[i])
     {
         if (str[i] == '\n')
         {
-            j++;
+            return(1);
         }
         i++;
     }
-    return (j);
+    return (0);
 }
 
 static char *line_ct (char *str)
