@@ -39,13 +39,16 @@ static char *line_ct (char *str)
     line = malloc(sizeof(char) * (len + 1));
     if (!line)
         return (NULL);
-    line[len] = '\0';
     i = 0;
     while (str[i] && str[i] != '\n')
     {
         line[i] = str[i];
         i++;
     }
+    if (line[i] == '\n')
+	    line[i] = '\n';
+    i++;
+    line[i] = '\0';
     return (line);
 }
 
