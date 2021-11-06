@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 23:38:25 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/01 18:31:30 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/06 11:23:58 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char new_line (char *str)
     {
         if (str[i] == '\n')
         {
-            return (1);
+            return(1);
         }
         i++;
     }
@@ -38,7 +38,6 @@ static char *line (char *str)
     line = malloc(sizeof(char) * (len + 1));
     if (!line)
         return (NULL);
-    line[len] = '\0';
     i = 0;
     while (str[i] && str[i] != '\n')
     {
@@ -68,7 +67,7 @@ static char *line (char *str)
 
 int main ()
 {
-    char str [] = "ola tudo bem \n1 quebra \n2 quebra";
+    char str [] = "ola todo bem \n1 quebra \n2 quebra";
     
     printf("%d\n", new_line(str));
     printf("%s", line(str));
