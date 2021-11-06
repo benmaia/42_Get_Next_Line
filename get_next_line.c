@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 23:38:25 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/06 19:56:20 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/06 20:15:15 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,22 @@ static char *get_line (char *str)
     int i;
     char len;
     char *line;
-    char *storage;
    
-    len = 30;
+    len = 50;
     line = malloc(sizeof(char) * (len + 1));
-    storage = NULL;
     if (!line)
         return (NULL);
     i = 0;
-    while (*str && i < len)
+    while (str[i] && i < len)
     {
-        line[i++] = *str++;
+        line[i] = str[i];
         i++;
     }
     line[i] = '\0';
-    while (*str)
-    {
-        *storage++ = *str++;
-    }
-    printf("%s\n", storage);
+    // while (*str)
+    // {
+    //     *storage++ = *str++;
+    // }
     return (line);
 }
 
