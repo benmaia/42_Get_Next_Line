@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 23:38:25 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/06 17:56:42 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/06 19:56:20 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ static char *get_line (char *str)
     while (*str && i < len)
     {
         line[i++] = *str++;
-        //i++;
+        i++;
     }
     line[i] = '\0';
-    // while (*str)
-    // {
-    //     *storage++ = *str++;
-    // }
-    // printf("%s\n", storage);
+    while (*str)
+    {
+        *storage++ = *str++;
+    }
+    printf("%s\n", storage);
     return (line);
 }
 
