@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:31:47 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/01 18:31:48 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/08 12:40:58 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
 int ft_strlen(char *str);
+
+char *ft_strdup(char *str);
+
+char    *ft_strjoin(char *str1, char *str2);
+
+char *get_next_line(int fd);
 
 #endif

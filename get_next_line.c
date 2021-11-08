@@ -6,71 +6,100 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 23:38:25 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/06 20:15:15 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/08 12:48:44 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char new_line (char *str)
+int got_new_line(char *pocket)
 {
     int i;
 
+    if (!pocket)
+        return (0);
     i = 0;
-    while (str[i])
+    while (pocket[i])
     {
-        if (str[i] == '\n')
-        {
-            return(1);
-        }
+        if (pocket[i] == '\n')
+            return (1);
         i++;
     }
     return (0);
 }
 
-static char *get_line (char *str)
+char *until_line(char *pocket)
 {
     int i;
-    char len;
     char *line;
-   
-    len = 50;
-    line = malloc(sizeof(char) * (len + 1));
+
+    if (!pocket)
+        return (NULL);
+    i = 0;
+    while (pocket[i] && pocket[i] != '\n')
+        i++;cd ..
+    line = (char *)malloc(sizeof(char) * (i + 1));
     if (!line)
         return (NULL);
     i = 0;
-    while (str[i] && i < len)
+    while (pocket[i] && pocket[i] != '\n')
     {
-        line[i] = str[i];
+        line[i] = pocket[i];
         i++;
     }
     line[i] = '\0';
-    // while (*str)
-    // {
-    //     *storage++ = *str++;
-    // }
     return (line);
 }
 
-// char    *get_next_line(int fd)
-// {
-//     int i;
-//     //int j;
-//     char buf[BUFFER_SIZE + 1];
-
-//     if (fd == -1)
-//         return (NULL);
-//     i = read(fd, buf, BUFFER_SIZE);
-//     buf = line()
-//     buf[i] = '\0';
-    
-// }
-
-int main ()
+char *after_line(char *pocket)
 {
-    char str [] = "ola todo bem \n1 quebra \n2 quebra";
-    
-    printf("%d\n", new_line(str));
-    printf("%s\n", get_line(str));
-    
+    int i;
+    int j;
+    char *new_line;
+
+    if (!pocket)
+        return (NULL);
+    i = 0;
+    while (pocket [i] != '\n' && pocket[i])
+        i++;
+    new_line = (char *)malloc(sizeof(char) * (ft_strlen(pocket) - i + 1));
+    if (!new_line)
+        return (NULL);
+    i++;
+    j = 0;
+    while (pocket[i])
+        new_line[j++] = pocket[i++];
+    new_line[j] = '\0';
+    free(pocket);
+    return (new_line);
+}
+
+char *get_next_line(int fd)
+{
+    static char *pocket[1024];
+    char **line = NULL;
+    char *buf;
+    int reader;
+
+    if ((read(fd, 0, 0) == -1) | (BUFFER_SIZE <= 0))
+        return (NULL);
+    buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
+		return (NULL);
+    reader = 1;
+    while (!got_new_line(pocket[fd]) && reader != 0)
+    {
+        reader = read(fd, buf, BUFFER_SIZE);
+        if (reader == -1)
+        {
+            free(buf);
+            return (NULL);
+        }
+        //buf[reader] = '\0';
+        pocket[fd] = ft_strjoin(pocket[fd], (char *)buf);
     }
+    free(buf);
+    *line = until_line(pocket[fd]);
+    pocket[fd] = after_line(pocket[fd]);
+    return (*line);
+}
