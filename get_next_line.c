@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 23:38:25 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/08 12:48:44 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/08 15:01:47 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char *until_line(char *pocket)
         return (NULL);
     i = 0;
     while (pocket[i] && pocket[i] != '\n')
-        i++;cd ..
+        i++;
     line = (char *)malloc(sizeof(char) * (i + 1));
     if (!line)
         return (NULL);
@@ -81,7 +81,7 @@ char *get_next_line(int fd)
     char *buf;
     int reader;
 
-    if ((read(fd, 0, 0) == -1) | (BUFFER_SIZE <= 0))
+    if (fd < 0 || (BUFFER_SIZE < 0))
         return (NULL);
     buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)

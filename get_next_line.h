@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:31:47 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/08 12:40:58 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/09 14:54:27 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #  define BUFFER_SIZE 1
 # endif
 
-int ft_strlen(char *str);
+size_t ft_strlen(const char *str);
 
 char *ft_strdup(char *str);
 

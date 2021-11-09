@@ -6,21 +6,21 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:31:43 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/08 12:21:46 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/09 14:54:36 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int ft_strlen(char *str)
-{
-    int i;
+// int ft_strlen(char *str)
+// {
+//     int i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
-}
+//     i = 0;
+//     while (str[i])
+//         i++;
+//     return (i);
+// }
 
 char *ft_strdup(char *str)
 {
