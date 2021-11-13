@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmiguel- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 15:37:59 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/13 14:47:41 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/13 15:33:46 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,32 +55,33 @@ char	*ft_strdup(const char *s1)
 	return (temp);
 }
 
-/*void	*memmove(void *dst, const void *src, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char *d;
-	unsigned char *s;
-	size_t i;
+	size_t	i;
+	size_t	j;
+	size_t	s_len;
+	char	*new;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-
-	if (!dst || !src)
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (s_len < len)
+		new = (char *)malloc(sizeof(char) * (s_len + 1));
+	else
+		new = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new)
 		return (NULL);
 	i = 0;
-	if (d > s)
+	j = 0;
+	while (s[i])
 	{
-		while (len > 0)
-		{
-			d[len - 1] = s[len - 1];
-			len--;
-		}
-	else
-	{
-		while (++i < len)
-			d[i] = s[i];
+		if (i >= start && j < len)
+			new[j++] = s[i];
+		i++;
 	}
-	return (dst);
-}*/
+	new[j] = '\0';
+	return (new);
+}
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {

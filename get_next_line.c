@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 17:47:06 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/13 15:22:00 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/13 15:33:36 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,34 +38,6 @@ static int has_new_line(char *saved)
 		i++;
 	}
 	return (0);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	size_t	j;
-	size_t	s_len;
-	char	*new;
-
-	if (!s)
-		return (NULL);
-	s_len = ft_strlen(s);
-	if (s_len < len)
-		new = (char *)malloc(sizeof(char) * (s_len + 1));
-	else
-		new = (char *)malloc(sizeof(char) * (len + 1));
-	if (!new)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (i >= start && j < len)
-			new[j++] = s[i];
-		i++;
-	}
-	new[j] = '\0';
-	return (new);
 }
 
 static char	*return_line(char **saved)
