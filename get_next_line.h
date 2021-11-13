@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:31:47 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/12 17:21:34 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/13 11:45:37 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
