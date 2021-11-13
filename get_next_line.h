@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:31:47 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/13 15:16:48 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/13 15:35:13 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*ft_strchr(const char *s, int c);
 char    *ft_strdup(const char *s1);
 
 char    *ft_strjoin(const char *s1, const char *s2);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 char *get_next_line(int fd);
 
