@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 15:37:59 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/13 15:33:46 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/15 21:40:54 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,18 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (s[i])
 		i++;
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
-{
-	int i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	return (NULL);
-}
-
 char	*ft_strdup(const char *s1)
 {
-	int i;
-	char *temp;
+	int		i;
+	char	*temp;
 
 	i = ft_strlen(s1);
 	temp = (char *)malloc(sizeof(char) * (i + 1));
@@ -85,9 +71,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int i;
-	int j;
-	char *new;
+	int		i;
+	int		j;
+	char	*new;
 
 	if (!s1 || !s2)
 		return (NULL);

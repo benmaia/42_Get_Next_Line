@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 17:47:06 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/13 15:33:36 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/15 21:39:47 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	find_i(char *saved)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (saved[i])
@@ -26,9 +26,9 @@ static int	find_i(char *saved)
 	return (0);
 }
 
-static int has_new_line(char *saved)
+static int	has_new_line(char *saved)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (saved[i])
@@ -42,8 +42,8 @@ static int has_new_line(char *saved)
 
 static char	*return_line(char **saved)
 {
-	int	i;
-	char 	*line;
+	int		i;
+	char	*line;
 	char	*temp;
 
 	if (!*saved || **saved == '\0')
@@ -67,10 +67,10 @@ static char	*return_line(char **saved)
 
 char	*get_next_line(int fd)
 {
-	char *buf;
-	static char *saved[OPEN_MAX];
-	char *temp;
-	int ret;
+	char		*buf;
+	static char	*saved[OPEN_MAX];
+	char		*temp;
+	int			ret;
 
 	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE < 1)
 		return (NULL);
@@ -86,8 +86,8 @@ char	*get_next_line(int fd)
 		temp = ft_strjoin(saved[fd], buf);
 		free (saved[fd]);
 		saved[fd] = temp;
-		if (ft_strchr(saved[fd], '\n'))
-			break;
+		if (has_new_line(saved[fd]))
+			break ;
 		ret = read(fd, buf, BUFFER_SIZE);
 	}
 	free (buf);
