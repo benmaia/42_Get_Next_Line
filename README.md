@@ -10,11 +10,6 @@
 </br>
 <p> The aim of this project is to make a fuction that will return a complete line, when it finds a newline.</br>
 <p> This function will read from a File Descriptor and must be called in a loop until it ends the EOF (End of File).
-</br>
-<p> Objectives:
-	-  Calling the function in a loop will read the text available on a file descriptor, one line at a time until end of the file.
-    - Return 1 when a line has been read, 0 when EOF has been reached, -1 when an error happened.
-    - Able to manage multiple file descriptors.
 </br></p>
 </br>
 <p> GNL OK ✅ GNL BONUS OK ✅</p>
