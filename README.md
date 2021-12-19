@@ -16,5 +16,5 @@
 </br>
 <p> Grade: 125% </p>
 <div style="display: inline"><br>
-   <img src="https://cdn.discordapp.com/attachments/461563270411714561/909915854735560744/Image_11-15-21_at_9.10_PM.jpeg" class="transparent shrinkToFit" width="2000" height="250">
+   <img src="https://cdn.discordapp.com/attachments/461563270411714561/909915854735560744/Image_11-15-21_at_9.10_PM.jpeg" class="transparent shrinkToFit">
 </div>
