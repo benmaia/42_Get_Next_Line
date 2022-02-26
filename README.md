@@ -7,10 +7,9 @@
 
 > *Reading a line on a fd is way too tedious*
 </br>
-</br>
 <p> The aim of this project is to make a fuction that will return a complete line, when it finds a newline.</br>
 <p> This function will read from a File Descriptor and must be called in a loop until it ends the EOF (End of File).
-</br></p>
+</br>
 </br>
 <p> GNL OK ✅ GNL BONUS OK ✅</p>
 </br>
